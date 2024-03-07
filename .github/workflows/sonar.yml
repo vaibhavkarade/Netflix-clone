@@ -40,7 +40,7 @@ jobs:
         run: |
           #run commands to build and push docker images
           docker build --build-arg TMDB_V3_API_KEY=a88d1e4e75507a405e6be7e4be0172c3 -t netflixclone .
-          docker tag netflix vaibhavkarade/netflixclone:latest
+          docker tag netflixclone vaibhavkarade/netflixclone:latest
           docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
           docker push vaibhavkarade/netflixclone:latest
         env:
